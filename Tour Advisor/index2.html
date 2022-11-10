@@ -16,6 +16,37 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .nav-options> #name{
+            background: black;
+            color:white;
+            padding:13px 4px;
+            position: relative;
+            display: inline-block;
+            
+        }
+        #dropdown{
+            display: none;
+            position: absolute;
+            background-color: black;
+            text-align: center;
+            padding:8px 44px;
+            margin-top:15px;
+            z-index: 1;
+        }
+        .nav-options> #name:hover  #dropdown {
+            display: block;
+            background: white;
+            color:black;
+            border: 1px solid black;
+        }
+        .nav-options> #name:hover{
+            border-radius: 2px;
+            background: white;
+            color:black;
+            /* border: 1px solid black; */
+        }
+    </style>
 </head>
 
 <body>
@@ -32,8 +63,10 @@
                     <div><i class="material-icons" id="icons"> notifications_none </i><span
                             class="nav-name">Alerts</span>
                     </div>
-                    <div id="sign-in">Sign in</div>
                     <div><i class="material-icons" id="icons"> add_shopping_cart</i><span class="nav-name">Basket</span>
+                    </div>
+                    <div id="name"><span id="nameID" style="font-size:13px">Shubham</span>
+                        <div id="dropdown">logout</div>
                     </div>
                 </div>
             </div>
@@ -283,5 +316,5 @@
 </body>
 
 </html>
+<script src="index2.js"></script>
 <script src="index.js"></script>
-<!-- <script src="script.js"></script> -->
