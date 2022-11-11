@@ -46,13 +46,13 @@ body{
 }
 .nav-options > div{
     border:none;
-    width:19%;
+    width:20%;
     background-color: white;
     display: flex;
     justify-content: center;
     padding:10px 0;
     border-radius: 32px;
-    /* border: 1px solid black; */
+    border: 1px solid black;
     align-items: center;
     font-size: 16px;
     font-weight: 700;
@@ -69,7 +69,7 @@ body{
 #top-section{
     width:85%;
     margin:85px auto 60px;
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
 #options{
     display: flex;
@@ -162,7 +162,7 @@ body{
     position: relative;
     margin:20px auto;
     display: flex;
-    border:1px solid black;
+    /* border:1px solid black; */
 }
 .card:nth-child(3) ,.card2:nth-child(3) ,.card3:nth-child(3) {
     margin-left: 13px;
@@ -173,11 +173,12 @@ body{
     height: auto;
     /* left:0;
     z-index:1; */
-    border: 1px solid black;
+    /* border: 1px solid black; */
     position: relative;
     display: flex;
     /* width: 17rem; */
     height: 420px;    
+    transition: .5s ease-in-out;
 }
 .card2 {
     min-width:23.2%;
@@ -185,9 +186,10 @@ body{
     height: auto;
     /* left:0;
     z-index:1; */
-    border: 1px solid black;
+    /* border: 1px solid black; */
     position: relative;
     display: flex;
+    transition: .5s ease-in-out;
     height: 350px;    
 }
 .card3{
@@ -196,14 +198,16 @@ body{
     height: auto;
     /* left:0;
     z-index:1; */
-    border: 1px solid black;
+    /* border: 1px solid black; */
     position: relative;
     display: flex;
     height: 350px;    
+    transition: .5s ease-in-out;
 }
 .card-content , .card-content2 ,.card-content3 {
     position: absolute;
     left:0;
+    
     /* border: 1px solid black; */
     width: 100%;
     height:100%;
@@ -217,16 +221,16 @@ body{
     width: 100%;
 }
 .card >.card-content >p{
-    /* color:red; */
+    font-weight: 600;
 }
  #top-places>div{
     min-width:23.2%;
     margin-right:20px;
     left:0;
     z-index:1;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     display: flex;
-     flex-direction: column; 
+    flex-direction: column; 
     align-items: center;
     justify-content: space-between;
 }
@@ -242,27 +246,25 @@ body{
     background-color: black;
     color:white;
 } */
- #tour-destination > div:nth-child(3), #autumn-section>div:nth-child(3),#top-places>div:nth-child(3){
-    /* margin-left:15px; */
-}
+
 #tour-destination > div > img , #autumn-section>div>img,#top-places>div>img{
     width:100%;
     object-fit:cover;
     z-index:1;
 }
-#tour-destination > div >div> h4{
+/* #tour-destination > div >div> h4{
     word-spacing: 1.5px;
     line-height: 20px;
     letter-spacing: 0.6px;
     font-size: 17px;
     margin:5px auto;
-}
+} */
  #tour-destination > span ,#autumn-section>span ,#top-places>span {
     position: absolute;
     z-index:400;
     background-color: white;
     border-radius: 50%;
-    border:1px solid black;
+    /* border:1px solid black; */
     top:50%;
     font-size: 30px;
     transform: translate(-50%,-50%);
@@ -287,7 +289,7 @@ body{
 
 #middle-lower-section{
     display: flex;
-    border:1px solid black;
+    /* border:1px solid black; */
     width:85%;
     height:200px;
     margin: 30px auto;
@@ -296,14 +298,14 @@ body{
 
 #middle-lower-section > div:first-child {
     width:60%;
-    border:1px solid black;
+    /* border:1px solid black; */
     background-color: #FAF1ED;
 }
 #middle-lower-section > div:first-child>h1 {
-   margin:20px 30px 10px;
+   margin:30px 40px 10px;
 }
 #middle-lower-section > div:first-child>p{
-    margin:10px 30px;
+    margin:10px 40px;
 }
 #middle-lower-section > div:first-child>button{
     margin:20px 30px;
@@ -321,7 +323,7 @@ body{
 } 
 #middle-lower-section> div:last-child{
     width:40%;
-    border:1px solid black;
+    /* border:1px solid black; */
 }
 #middle-lower-section> div:last-child>img{
     width:100%;
@@ -332,7 +334,7 @@ body{
 /* <--------------------explore-------------------------> */
 #explore{
     width:100%;
-    border:1px solid black;
+    /* border:1px solid black; */
     background-color: #FAF1ED;
 }
 #explore>h2{
@@ -343,12 +345,12 @@ body{
     display:flex;
     width:85%;
     margin:20px auto;
-    border:1px solid black;
+    /* border:1px solid black; */
     justify-content: space-between;
 }
 #explore>div>div{
     width:32%;
-    border:1px solid black;
+    /* border:1px solid black; */
    text-align: center;
 }
 #explore>div>div>img{
@@ -406,7 +408,7 @@ body{
     display: flex;
     flex-direction: column;
     background-color:#FAF1ED ;
-    /* border:1px solid black; */
+    border:1px solid black;
 }
 #footer-main{
     display: flex;
@@ -416,19 +418,20 @@ body{
 }
 #footer-main>#anchor-tags{
     width:60%;
-    /* border:1px solid black; */
+    border:1px solid black;
     display: flex;
+    justify-content: space-between;
     margin:20px 0;
 }
 #footer-main> #sites-div{
     width:30%;
     margin:25px 0;
-    /* border:1px solid black; */
+    border:1px solid black;
 }
 #anchor-tags > div{
     display: flex;
     width:32%;
-    /* border:1px solid black; */
+    border:1px solid black;
     flex-direction: column;
 }
 #anchor-tags>div>h4 , #anchor-tags>div>div>h4{
@@ -458,7 +461,7 @@ body{
     flex-direction: column;
     width:85%;
     margin:20px auto;
-    /* border:1px solid black; */
+    border:1px solid black;
 }
 #footer-bottom-top{
     display: flex;
@@ -467,10 +470,10 @@ body{
 #footer-bottom-top > div:first-child{
     display: flex;
     width:55%;
-    /* border:1px solid black; */
+    border:1px solid black;
 }
 #footer-bottom-top > div{
-    /* border:1px solid black; */
+    border:1px solid black;
  
 }
 #footer-bottom-top > div>div:last-child>p{
@@ -492,7 +495,7 @@ body{
 
 }
 #footer-bottom-top > div:first-child>div:first-child{
-    /* border:1px solid black; */
+    border:1px solid black;
     width:20%;
 }
 #footer-bottom-top > div:first-child>div:first-child{
@@ -509,11 +512,11 @@ body{
 }
 #footer-bottom-bottom>div:first-child{
     width:60%;
-    /* border:1px solid black; */
+    border:1px solid black;
 }
 #footer-bottom-bottom>div:last-child{
     width:20%;
-    /* border:1px solid black; */
+    border:1px solid black;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -528,10 +531,247 @@ body{
 }
 
 
-@media all and (min-width:768px) and (max-width:1023px){
-
+@media all and (min-width:900px) and (max-width:1200px){
+    #options{
+        display: flex;
+    }
+    #options > div{
+        display: block;
+        text-align: center;
+        width:17%;
+        margin:30px 5px;
+        font-size: 14px;
+    }
+    #options > div>span{
+        padding-left: 0;
+    }
+    #options > div>i{
+        padding-right: 0;
+        display: none;
+    }
+    #search-input{
+        width:170%;
+        font-size: 16px;
+    }
+ /* <-----------------navbar--------------------> */
+.card:nth-child(3) ,.card2:nth-child(3) ,.card3:nth-child(3) {
+    margin-left: 0px;
+}
+.card {
+    min-width:23.2%;
+    margin-right:15px;
+    height: 380px;    
+    transition: .5s ease-in-out;
+}
+.card2 {
+    min-width: 22%;
+    height: 300px;    
+    text-align: center;
+}
+.card3{
+    min-width:18%;
+    margin-right:25px;
+    height: 250px;    
+    transition: .5s ease-in-out;
+}
+.card-content {
+    left:0;
+    z-index: 200; 
+}
+.card-content2 {
+    left:0;
+    /* width: 100%; */
+    z-index: 200; 
+}
+.card-content3 {
+    position: absolute;
+    left:0;
+    width: 100%;
+    height:100%;
+    z-index: 200; 
+}
+.card-content2>h4{
+    margin-top: 10px;
+}
+.card-content3>h1{
+    font-size: 20px;
+    margin-top: 20px;
 }
 
-@media all and (max-width:767px){
-    
+.card-content >h4{
+    font-size: 16px;
 }
+.card-content >img{
+    width:100%;
+}
+ /* #top-places>div{
+    min-width:23.2%;
+    margin-right:20px;
+    left:0;
+    z-index:1;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    justify-content: space-between;
+} */
+
+ #tour-destination > span ,#autumn-section>span ,#top-places>span {
+    font-size: 25px;
+ }
+/* <-----------------------footer------------------------> */
+ #footer-bottom-top > div>select{
+    font-size: 14px;
+     width:120px; 
+     padding:5px 4px; 
+    text-align: center;
+ }
+ #anchor-tags>div>h4 , #anchor-tags>div>div>h4{
+    font-size: 14px;
+  }
+  #anchor-tags>div>a ,#anchor-tags>div>div>a  {
+    font-size: 12px;
+  }
+}
+
+@media all and (min-width:900px) and (max-width:1000px){
+    .card {
+        height: 350px;    
+    }
+    .card2 {
+        height: 270px;    
+    }
+    .card3{
+        height: 250px;    
+    }
+}
+
+@media all and (min-width:767px) and (max-width:900px){
+    .nav-bar{
+        margin-top: -120px;
+    }
+    .nav-options > div{
+        width:18%;
+    }
+    .nav-options > div:hover{
+        background-color: black;
+        color:white;
+        cursor: pointer;
+    }
+    #top-section{
+        margin-top: 120px;
+        /* margin-bottom: 20px; */
+        /* border: 1px solid black; */
+    }
+    #icons{
+        display: none;
+    }
+    #options{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows: auto;
+        gap:10px;
+    }
+    #options > div{
+        text-align: center;
+        width:auto;
+        margin:0;
+        /* font-size: 14px; */
+    }
+    #options > div>span{
+        padding-left: 10;
+    }
+    #options > div>i{
+        padding-right: 10;
+        display: block;
+    }
+    #search-input{
+        width:170%;
+        font-size: 16px;
+    }
+    #search-city{
+        margin:20px 0;
+    }
+    #header{
+        margin-bottom: -20px;
+    }
+ /* <-----------------navbar--------------------> */
+    .card:nth-child(3) ,.card2:nth-child(3) ,.card3:nth-child(3) {
+        margin-left: 0px;
+    }
+    .card {
+        min-width:23.2%;
+        margin-right:15px;
+        height: 350px;    
+        transition: .5s ease-in-out;
+    }
+    .card2 {
+        min-width: 22%;
+        height: 270px;    
+        text-align: center;
+    }
+    .card3{
+        min-width:18%;
+        margin-right:25px;
+        height: 220px;    
+        transition: .5s ease-in-out;
+    }
+    .card-content {
+        left:0;
+        z-index: 200; 
+    }
+    .card-content2 {
+        left:0;
+        /* width: 100%; */
+        z-index: 200; 
+    }
+    .card-content3 {
+        position: absolute;
+        left:0;
+        width: 100%;
+        height:100%;
+        z-index: 200; 
+    }
+    .card-content2>h4{
+        margin-top: 10px;
+    }
+    .card-content3>h1{
+        font-size: 18px;
+        margin-top: 10px;
+    }
+
+    .card-content >h4{
+        font-size: 15px;
+    }
+    .card-content >img{
+        width:100%;
+    }
+    /* #top-places>div{
+        min-width:23.2%;
+        margin-right:20px;
+        left:0;
+        z-index:1;
+        display: flex;
+        flex-direction: column; 
+        align-items: center;
+        justify-content: space-between;
+    } */
+
+    #tour-destination > span ,#autumn-section>span ,#top-places>span {
+        font-size: 25px;
+    }
+    /* <-----------------------footer------------------------> */
+    #footer-bottom-top > div>select{
+        font-size: 14px;
+        width:120px; 
+        padding:5px 4px; 
+        text-align: center;
+    }
+    #anchor-tags>div>h4 , #anchor-tags>div>div>h4{
+        font-size: 14px;
+    }
+    #anchor-tags>div>a ,#anchor-tags>div>div>a  {
+        font-size: 12px;
+    }
+}
+
+
