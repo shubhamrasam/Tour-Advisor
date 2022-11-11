@@ -30,6 +30,8 @@ function storeData(event){
    
 }
 
+
+
 function redirect(){
     window.location.href = "login2.html"
 }

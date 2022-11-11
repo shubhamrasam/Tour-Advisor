@@ -23,9 +23,10 @@ function displayData(data) {
     let desc = document.createElement("h4");
     desc.innerText = element.Description;
     let price = document.createElement("p");
-    price.innerText = `$ ${element.price}`;
+    price.innerText =` $ ${element.price}`;
     let basket = document.createElement("button");
     basket.innerText="Add to Basket"
+    basket.setAttribute("id","addCart")
     div2.append(img,desc,price,basket)
     // div2.append(img, desc, price );
     div1.append(div2);
