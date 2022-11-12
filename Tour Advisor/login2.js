@@ -4,6 +4,14 @@ HomePage.addEventListener('click',function(){
 })
 HomePage.setAttribute("style","cursor:pointer");
 
+function openside() {
+  document.querySelector("#side-window").style.width = "250px";
+}
+
+function closeside() {
+  document.querySelector("#side-window").style.width = "0";
+}
+
 let form = document.querySelector("#form");
 form.addEventListener("submit",login)
 let email = document.querySelector("#email");

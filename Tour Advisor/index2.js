@@ -1,10 +1,17 @@
-let name1 = document.querySelector("#nameID");
+// let name1 = document.querySelector("#nameID");
 
-let nameID = JSON.parse(localStorage.getItem("name"));
+// let nameID = JSON.parse(localStorage.getItem("name"));
 
-name1.innerText = nameID
-
-let logout = document.querySelector("#dropdown");
+// name1.innerText = nameID
+function openside() {
+    document.querySelector("#side-window").style.width = "250px";
+  }
+  
+  function closeside() {
+    document.querySelector("#side-window").style.width = "0";
+  }
+  
+let logout = document.querySelector(".dropdown");
 logout.addEventListener("click",function(){
     window.location.href = "index.html"
 })
@@ -22,17 +29,24 @@ async function getData() {
     );
     let data = await out.json();
     fullData = [...data]
-    console.log(data)
+    // console.log(data)
     displayData(data);
   }
   getData();
   let cartData = JSON.parse(localStorage.getItem("cartItem")) || [];
   function displayData(data) {
+    // document.querySelector("#tour-destination").innerHTML=null
     data.forEach((element) => {
       let div1 = document.createElement("div");
       div1.setAttribute("class", "card");
       let div2 = document.createElement("div");
       div2.setAttribute("class", "card-content");
+      let span1 = document.createElement("span");
+      span1.setAttribute("class","arrow material-icons left-arrow");
+      span1.innerText = "arrow_back"
+      let span2 = document.createElement("span");
+      span2.setAttribute("class","arrow material-icons right-arrow");
+      span2.innerText = "arrow_forward"
       let img = document.createElement("img");
       img.setAttribute("src", element.image);
       let desc = document.createElement("h4");
@@ -40,17 +54,13 @@ async function getData() {
       let price = document.createElement("p");
       price.innerText = ` $ ${element.price}`;
       let basket = document.createElement("button");
-      basket.innerText="Add to Basket"
-      basket.setAttribute("id","addCart")
-      let id = element.id
-      basket.addEventListener("click",function(){
-         addCart(element,"cartItem",id)
-      });
-      div2.append(img,desc,price,basket)
-      div1.append(div2);
+      basket.innerText = "Add to Basket";
+      basket.setAttribute("id", "addCart");
+      div2.append(img, desc, price, basket);
+      div1.append(span1,span2,div2);
       document.querySelector("#tour-destination").append(div1);
     });
-    slideCard()
+    slideCard();
   }
    
   function addCart (value,key,id){
@@ -69,56 +79,55 @@ async function getData() {
       }
   }
 
-  function slideCard(){
+  function slideCard() {
     const cards = document.querySelectorAll(".card");
     let rightArrow = document.querySelector(".right-arrow");
     let leftArrow = document.querySelector(".left-arrow");
     let left = 0;
     let cardSize = 25;
-    let totalCardSize = (cards.length * cardSize) - (cardSize*4);
-    checkopacity(left)
-    rightArrow.addEventListener("click",function(){
-        left += cardSize;
-        if(left>=totalCardSize){
-            left = totalCardSize
-        }
-        movecard(left);
-        checkopacity(left)
-        checkopacity2(left)
-    })
- 
-    leftArrow.addEventListener("click",function(){
-        left -= cardSize;
-        if(left<=0){
-            left = 0
-        }
-        movecard(left);
-        checkopacity(left)
-        checkopacity2(left)
-    })
-
-    function movecard(left){
-        for(card of cards){
-            card.style.left = -left+"%"
-        }
+    let totalCardSize = cards.length * cardSize - cardSize * 4;
+    checkopacity(left);
+    rightArrow.addEventListener("click", function () {
+      left += cardSize;
+      if (left >= totalCardSize) {
+        left = totalCardSize;
+      }
+      movecard(left);
+      checkopacity(left);
+      checkopacity2(left);
+    });
+  
+    leftArrow.addEventListener("click", function () {
+      left -= cardSize;
+      if (left <= 0) {
+        left = 0;
+      }
+      movecard(left);
+      checkopacity(left);
+      checkopacity2(left);
+    });
+  
+    function movecard(left) {
+      for (card of cards) {
+        card.style.left = -left + "%";
+      }
     }
-
-    function checkopacity(left){
-        if(left <= 0){
-            leftArrow.style.opacity = 0
-        }else{
-            leftArrow.style.opacity = 1;
-        }
+  
+    function checkopacity(left) {
+      if (left <= 0) {
+        leftArrow.style.opacity = 0;
+      } else {
+        leftArrow.style.opacity = 1;
+      }
     }
-    function checkopacity2(left){
-        if(left>=totalCardSize){
-            rightArrow.style.opacity = 0
-        }else{
-            rightArrow.style.opacity = 1
-        } 
+    function checkopacity2(left) {
+      if (left >= totalCardSize) {
+        rightArrow.style.opacity = 0;
+      } else {
+        rightArrow.style.opacity = 1;
+      }
     }
-}
-
+  }
 
 async function destination() {
   let out = await fetch("https://636b92b2ad62451f9fb59e6e.mockapi.io/info");
@@ -298,3 +307,15 @@ function slideCard3(){
     }
 }
 
+// <--------------search----------------------->
+
+
+
+// function searchElement(){
+//     let searchEle = document.querySelector("#search-input").value;
+//     console.log(searchEle)
+//     let searchData = fullData.filter((e)=>{
+//         return  e.Description.toLowerCase().includes(searchEle.toLowerCase())
+//     })
+//     displayData(searchData)
+// }

@@ -7,6 +7,7 @@
     <title>Document</title>
     <link rel="icon" href="Black_Line_Travel_Logo__2_-removebg-preview.png" type="image/x-icon">
     <link rel="stylesheet" href="basket.css" type="text/css">
+    <link rel="stylesheet" href="index.css" type="text/css">
     <link rel="icon" href="Black_Line_Travel_Logo__2_-removebg-preview.png" type="image/x-icon">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,24 +15,25 @@
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
-          .nav-options> #name{
-            background: black;
+    .nav-options> #name{
+            /* background: black; */
             color:white;
             padding:13px 4px;
             position: relative;
             display: inline-block;
-            
+            border:none;
+            text-align: center;
+            /* border: 1px solid black; */
         }
-        #dropdown{
+        .dropdown{
             display: none;
             position: absolute;
-            background-color: black;
             text-align: center;
             padding:8px 44px;
-            margin-top:15px;
+            margin-top:10px;
             z-index: 1;
         }
-        .nav-options> #name:hover  #dropdown {
+        .nav-options> #name:hover  .dropdown {
             display: block;
             background: white;
             color:black;
@@ -43,12 +45,32 @@
             color:black;
             /* border: 1px solid black; */
         }
+        #name>img{
+            width:30%;
+            border-radius: 50%;
+            /* margin-left: 50px; */
+        }
+
+        @media all and (min-width:350px) and (max-width:767px){
+            #name>img{
+            width:60%;
+            }
+        }
     </style>
 </head>
 <body>
     <section id="header">
         <div class="nav-bar">
             <div id="nav-child">
+                <div id="side-window" >
+                    <a class="closebtn" onclick="closeside()"> &times;</a>
+                    <a href="">Reviews</a>
+                    <a href="">Trips</a>
+                    <a href="">Alerts</a>
+                    <a href="">Contact</a>
+                    <a href="">About</a>
+                  </div>
+                <button class="openbtn" onclick="openside()">&#9776; </button>
                 <div id="logo">
                     <img src="Tour Advisor Logo.png" alt="logo of tour advisor" />
                 </div>
@@ -59,11 +81,11 @@
                     <div><i class="material-icons" id="icons"> notifications_none </i><span
                             class="nav-name">Alerts</span>
                     </div>
-                    <div><i class="material-icons" id="icons"> add_shopping_cart</i><span class="nav-name">Basket</span>
+                    <div id="name"><img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/f6/f3/23/default-avatar-2020-28.jpg?w=100&h=-1&s=1"/>
+                        <div class="dropdown">logout</div>
                     </div>
-                    <!-- <div id="name"><span id="nameID" style="font-size:13px">Shubham</span> 
-                         <div id="dropdown">logout</div> 
-                    </div> -->
+                    <div id="basket"><i class="material-icons basket" id="icons"> add_shopping_cart</i><span class="nav-name">Basket</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -86,40 +108,43 @@
         </div>
     </section>
     <div id="payment" class="payment-page">
-        <div class="payment-details">
+        <form class="payment-details">
           <span class="close">&times;</span>
           <div>
                 <div class="payment-option">
                     <h3>Payment Options:</h3>
                      <div>
-                         <input type="radio" name="card">
+                         <input type="radio"  name="pay">
                          <label for="debit">Debit Card</label>
-                         <input type="radio" name="card">
+                         <input type="radio"  name="pay">
                          <label for="credit">Credit Card</label>
                      </div>
                 </div>
                 <hr>
                 <div class="card-num">
                     <p>Card Number:</p>
-                    <input type="tel" id="" minlength="16" maxlength="4" pattern="[0-9]*" required>
-                    <input type="tel" id="" minlength="16" maxlength="4" pattern="[0-9]*" required>
-                    <input type="tel" id="" minlength="16" maxlength="4" pattern="[0-9]*" required>
-                    <input type="tel" id="" minlength="16" maxlength="4" pattern="[0-9]*" required>
+                    <input type="tel" id=""  name="pay"  maxlength="4" pattern="[0-9]*" required>
+                    <input type="tel" id=""  name="pay"  maxlength="4" pattern="[0-9]*" required>
+                    <input type="tel" id=""  name="pay"  maxlength="4" pattern="[0-9]*" required>
+                    <input type="tel" id=""  name="pay"  maxlength="4" pattern="[0-9]*" required>
                 </div>
                 <hr>
                 <div class="card-details">
                     <div>
                         <p>Expiry:</p>
-                        <input name="expiry" id="expiry" type="month" required/>
+                        <input name="pay" id="expiry" type="month" required/>
                     </div>
                     <div>
                         <p>CVC:</p>
-                        <input type="password" minlength="3" maxlength="3" pattern="[0-9]*" required>
+                        <input type="password"  name="pay" minlength="3" maxlength="3" pattern="[0-9]*" required>
                     </div>
                 </div>
-                <button id="payment-accpet"> Pay</button>
+                <input type="submit" name="pay" id="payment-accpet"/> 
             </div>
-        </div>
+        </form>
+      </div>
+      <div id="bottom">
+
       </div>
 </body>
 </html>

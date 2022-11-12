@@ -68,7 +68,7 @@
  #signup{
     width:42%;
     /* border:1px solid black; */
-    margin:40px auto;
+    margin:85px auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -133,3 +133,28 @@
     text-align: center;
     margin:10px auto 30px
  }
+
+
+ @media all and (min-width:900px) and (max-width:1023px){
+   #signup{
+      width:60%;
+      margin:85px auto;
+   }
+  
+ }
+
+ @media all and (min-width:768px) and (max-width:900px){
+   #signup{
+      width:60%;
+      margin:135px auto;
+   }
+  
+ }
+
+ @media all and (max-width:767px){
+   #signup{
+      width:100%;
+      margin:115px 0;
+   }
+  
+}

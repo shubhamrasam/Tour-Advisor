@@ -19,9 +19,19 @@
 </head>
 
 <body>
+    
     <section id="header">
         <div class="nav-bar">
             <div id="nav-child">
+                <div id="side-window" >
+                    <a class="closebtn" onclick="closeside()"> &times;</a>
+                    <a href="">Reviews</a>
+                    <a href="">Trips</a>
+                    <a href="">Alerts</a>
+                    <a href="">Contact</a>
+                    <a href="">About</a>
+                  </div>
+                <button class="openbtn" onclick="openside()">&#9776; </button>
                 <div id="logo">
                     <img src="Tour Advisor Logo.png" alt="logo of tour advisor" />
                 </div>
@@ -32,8 +42,8 @@
                     <div><i class="material-icons" id="icons"> notifications_none </i><span
                             class="nav-name">Alerts</span>
                     </div>
-                    <div id="sign-in">Sign in</div>
-                    <div><i class="material-icons" id="icons"> add_shopping_cart</i><span class="nav-name">Basket</span>
+                    <div id="sign-in"><span>Sign in</span></div>
+                    <div><i class="material-icons basket" id="icons"> add_shopping_cart</i><span class="nav-name">Basket</span>
                     </div>
                 </div>
             </div>
@@ -51,7 +61,7 @@
                 <img src="https://static.tacdn.com/img2/brand/home/homemar2022_dt_trans.webp" />
                 <div>
                     <span class="material-icons">search<span>
-                            <input id="search-input" type="text" placeholder="Where to" />
+                    <input id="search-input" type="text" placeholder="Where to" />
                 </div>
             </div>
         </div>
@@ -64,7 +74,7 @@
             <div id="tour-destination">
                 <span class="arrow material-icons left-arrow">arrow_back</span>
                 <span class="arrow material-icons right-arrow">arrow_forward</span>
-
+                
             </div>
         </div>
     </section>

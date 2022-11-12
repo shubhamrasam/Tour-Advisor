@@ -18,23 +18,24 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
         .nav-options> #name{
-            background: black;
+            /* background: black; */
             color:white;
             padding:13px 4px;
             position: relative;
             display: inline-block;
-            
+            border:none;
+            text-align: center;
+            /* border: 1px solid black; */
         }
-        #dropdown{
+        .dropdown{
             display: none;
             position: absolute;
-            background-color: black;
             text-align: center;
             padding:8px 44px;
-            margin-top:15px;
+            margin-top:10px;
             z-index: 1;
         }
-        .nav-options> #name:hover  #dropdown {
+        .nav-options> #name:hover  .dropdown {
             display: block;
             background: white;
             color:black;
@@ -46,6 +47,18 @@
             color:black;
             /* border: 1px solid black; */
         }
+        #name>img{
+            width:30%;
+            border-radius: 50%;
+            /* margin-left: 50px; */
+        }
+
+        @media all and (min-width:350px) and (max-width:767px){
+            #name>img{
+            width:60%;
+            }
+            
+        }
     </style>
 </head>
 
@@ -53,6 +66,15 @@
     <section id="header">
         <div class="nav-bar">
             <div id="nav-child">
+                <div id="side-window" >
+                    <a class="closebtn" onclick="closeside()"> &times;</a>
+                    <a href="">Reviews</a>
+                    <a href="">Trips</a>
+                    <a href="">Alerts</a>
+                    <a href="">Contact</a>
+                    <a href="">About</a>
+                  </div>
+                <button class="openbtn" onclick="openside()">&#9776; </button>
                 <div id="logo">
                     <img src="Tour Advisor Logo.png" alt="logo of tour advisor" />
                 </div>
@@ -63,10 +85,10 @@
                     <div><i class="material-icons" id="icons"> notifications_none </i><span
                             class="nav-name">Alerts</span>
                     </div>
-                    <div id="basket"><i class="material-icons" id="icons"> add_shopping_cart</i><span class="nav-name">Basket</span>
+                    <div id="name"><img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/f6/f3/23/default-avatar-2020-28.jpg?w=100&h=-1&s=1"/>
+                        <div class="dropdown">logout</div>
                     </div>
-                    <div id="name"><span id="nameID" style="font-size:13px">Shubham</span>
-                        <div id="dropdown">logout</div>
+                    <div id="basket"><i class="material-icons basket" id="icons"> add_shopping_cart</i><span class="nav-name">Basket</span>
                     </div>
                 </div>
             </div>
@@ -84,7 +106,7 @@
                 <img src="https://static.tacdn.com/img2/brand/home/homemar2022_dt_trans.webp" />
                 <div>
                     <span class="material-icons">search<span>
-                            <input id="search-input" type="text" placeholder="Where to" />
+                            <input id="search-input" type="text" oninput="searchElement()" placeholder="Where to" />
                 </div>
             </div>
         </div>
@@ -97,7 +119,6 @@
             <div id="tour-destination">
                 <span class="arrow material-icons left-arrow">arrow_back</span>
                 <span class="arrow material-icons right-arrow">arrow_forward</span>
-
             </div>
         </div>
     </section>
