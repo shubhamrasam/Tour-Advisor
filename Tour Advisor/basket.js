@@ -84,7 +84,11 @@ let checkoutBtn = document.querySelector("#checkout-btn");
 var span = document.querySelector(".close");
 
 checkoutBtn.onclick = function() {
-  modal.style.display = "block";
+  if(totalprice.innerText==0){
+    alert("Add Items in Cart")
+  }else{
+    modal.style.display = "block";
+  }
 }
 
 span.onclick = function() {
@@ -99,8 +103,6 @@ window.onclick = function(event) {
 
 
 let pay = document.querySelector(".payment-details");
-// let input = document.getElementsByTagName("input").value
-// console.log(input);
 let flag = true;
 pay.addEventListener("submit",payment);
 function payment(event){
