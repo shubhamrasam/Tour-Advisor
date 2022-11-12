@@ -4,6 +4,19 @@ HomePage.addEventListener('click',function(){
 })
 HomePage.setAttribute("style","cursor:pointer");
 
+function openside() {
+  document.querySelector("#side-window").style.width = "250px";
+}
+
+function closeside() {
+  document.querySelector("#side-window").style.width = "0";
+}
+
+let logout = document.querySelector(".dropdown");
+logout.addEventListener("click",function(){
+  window.location.href = "index.html"
+})
+
 let cartItem = JSON.parse(localStorage.getItem("cartItem")) || [];
 console.log(cartItem)
 let totalprice = document.querySelector(".price");
@@ -85,22 +98,13 @@ window.onclick = function(event) {
 }
 
 
-let pay = document.querySelector("#payment-accpet");
-let input = document.getElementsByTagName("input").value
-console.log(input);
+let pay = document.querySelector(".payment-details");
+// let input = document.getElementsByTagName("input").value
+// console.log(input);
 let flag = true;
-pay.addEventListener("click",function(){
-    // for(let i=0; i<10; i++){
-    //     if(input[i] == null){
-    //         flag = false
-    //      }
-    // }
-
-    if(flag==false){
-        let warn = document.createElement("h4");
-         warn.innerText = "Fill all Card Details"
-        document.querySelector(".payment-details").append(warn)
-    }else{
-        window.location.href = "otp.html"
-    }
-})
+pay.addEventListener("submit",payment);
+function payment(event){
+    event.preventDefault()
+    console.log("completed")
+   window.location.href = "otp.html"
+}
