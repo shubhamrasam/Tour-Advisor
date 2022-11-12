@@ -156,15 +156,13 @@ body{
 #middle-section,#lower-part ,#top-destination {
     width:85%;
     margin:30px auto;
-    /* overflow: unset; */
 }
 #tour-destination , #autumn-section, #top-places{
     width:100%;
     position: relative;
     margin:20px auto;
     display: flex;
-    overflow: scroll;
-    /* border:1px solid black; */
+    overflow: hidden;
 }
 .card:nth-child(3) ,.card2:nth-child(3) ,.card3:nth-child(3) {
     margin-left: 13px;
@@ -173,11 +171,8 @@ body{
     min-width:23.2%;
     margin-right:20px;
     height: auto;
-    /* left:0;
-    z-index:1; */
     position: relative;
     display: flex;
-    /* width: 17rem; */
     height: 420px;    
     transition: .5s ease-in-out;
 }
@@ -185,9 +180,6 @@ body{
     min-width:23.2%;
     margin-right:22px;
     height: auto;
-    /* left:0;
-    z-index:1; */
-    /* border: 1px solid black; */
     position: relative;
     display: flex;
     transition: .5s ease-in-out;
@@ -197,9 +189,6 @@ body{
     min-width:22%;
     margin-right:22px;
     height: auto;
-    /* left:0;
-    z-index:1; */
-    /* border: 1px solid black; */
     position: relative;
     display: flex;
     height: 350px;    
@@ -208,7 +197,6 @@ body{
 .card-content , .card-content2 ,.card-content3 {
     position: absolute;
     left:0;
-    /* border: 1px solid black; */
     width: 100%;
     height:100%;
     display: flex;
@@ -228,7 +216,6 @@ body{
     margin-right:20px;
     left:0;
     z-index:1;
-    /* border: 1px solid black; */
     display: flex;
     flex-direction: column; 
     align-items: center;
@@ -252,13 +239,7 @@ body{
     object-fit:cover;
     z-index:1;
 }
-/* #tour-destination > div >div> h4{
-    word-spacing: 1.5px;
-    line-height: 20px;
-    letter-spacing: 0.6px;
-    font-size: 17px;
-    margin:5px auto;
-} */
+
  #tour-destination > span ,#autumn-section>span ,#top-places>span {
     position: absolute;
     z-index:400;
@@ -318,7 +299,6 @@ body{
 } 
 #middle-lower-section> div:last-child{
     width:40%;
-    /* border:1px solid black; */
 }
 #middle-lower-section> div:last-child>img{
     width:100%;
@@ -329,12 +309,10 @@ body{
 /* <--------------------explore-------------------------> */
 #explore{
     width:100%;
-    /* border:1px solid black; */
     background-color: #FAF1ED;
 }
 #explore>h2{
     width:85%;
-    /* border: 1px solid black; */
     margin:auto;
     padding:20px 0;
 }
@@ -342,12 +320,10 @@ body{
     display:flex;
     width:85%;
     margin:20px auto;
-    /* border:1px solid black; */
     justify-content: space-between;
 }
 #explore>div>div{
     width:32%;
-    /* border:1px solid black; */
    text-align: center;
 }
 #explore>div>div>img{
@@ -365,7 +341,6 @@ body{
     display: block;
     padding:0 20px;
     font-weight: 700;
-    /* border: 1px solid black; */
 }
 
 
@@ -405,7 +380,6 @@ body{
     display: flex;
     flex-direction: column;
     background-color:#FAF1ED ;
-    /* border:1px solid black; */
 }
 #footer-main{
     display: flex;
@@ -415,7 +389,6 @@ body{
 }
 #footer-main>#anchor-tags{
     width:60%;
-    /* border:1px solid black; */
     display: flex;
     justify-content: space-between;
     margin:20px 0;
@@ -423,12 +396,10 @@ body{
 #footer-main> #sites-div{
     width:30%;
     margin:25px 0;
-    /* border:1px solid black; */
 }
 #anchor-tags > div{
     display: flex;
     width:32%;
-    /* border:1px solid black; */
     flex-direction: column;
 }
 #anchor-tags>div>h4 , #anchor-tags>div>div>h4{
@@ -682,6 +653,7 @@ body{
         margin-bottom: -20px;
     }
  /* <-----------------navbar--------------------> */
+    
     .card:nth-child(3) ,.card2:nth-child(3) ,.card3:nth-child(3) {
         margin-left: 0px;
     }
@@ -794,7 +766,7 @@ body{
     .nav-options > div > i{
         display: none;
     }
-  
+    
     #sign-in >span{
         display: block;
         width:100%;
@@ -890,12 +862,15 @@ body{
     .card:nth-child(3) ,.card2:nth-child(3) ,.card3:nth-child(3) {
         margin-left: auto;
     }
+    #tour-destination , #autumn-section, #top-places{
+        overflow: scroll;
+    }
     #lower-part ,#top-destination {
         width:85%;
         margin: 30px auto;
         overflow-x: hidden;
         text-align: center;
-        /* overflow: unset; */
+        overflow-x: scroll;
     }
     #middle-section{
         width:85%;
@@ -1276,10 +1251,12 @@ body{
     .card:nth-child(3) ,.card2:nth-child(3) ,.card3:nth-child(3) {
         margin-left: auto;
     }
+    #tour-destination , #autumn-section, #top-places{
+        overflow: scroll;
+    }
     #lower-part ,#top-destination {
         width:70%;
         margin: 30px auto;
-        overflow-x: hidden;
         /* overflow: unset; */
     }
     #middle-section{
@@ -1309,7 +1286,7 @@ body{
    
     .card {
         min-width:100%;
-        margin: 5px 0;
+        margin: 5px 7px;
         height: 480px;    
         transition: .5s ease-in-out;
         /* border:1px solid black; */
@@ -1317,11 +1294,11 @@ body{
     .card2 {
         min-width: 100%;
         height: 370px;  
-        margin-right: 0;  
+        margin: 0 7px;
     }
     #top-places>.card3{
         min-width:100%;
-        margin-right:0;
+        margin: 0 5px;
         height: 350px;   
         display: block;
         transition: .5s ease-in-out;
@@ -1356,7 +1333,10 @@ body{
         font-size: 18px;
         margin: 10px 0;
     }
-
+    .card-content>button{
+        padding:5px 12px;
+        
+    }
     .card-content >h4{
         font-size: 14px;
         margin-bottom: 5px;

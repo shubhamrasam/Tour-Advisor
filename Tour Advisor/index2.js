@@ -29,7 +29,7 @@ async function getData() {
     );
     let data = await out.json();
     fullData = [...data]
-    // console.log(data)
+    console.log(data)
     displayData(data);
   }
   getData();
@@ -53,11 +53,15 @@ async function getData() {
       desc.innerText = element.Description;
       let price = document.createElement("p");
       price.innerText = ` $ ${element.price}`;
+      let id = element.id
       let basket = document.createElement("button");
       basket.innerText = "Add to Basket";
       basket.setAttribute("id", "addCart");
+      basket.addEventListener("click",function(){
+        addCart (element ,"cartItem",id)
+      })
       div2.append(img, desc, price, basket);
-      div1.append(span1,span2,div2);
+      div1.append(div2);
       document.querySelector("#tour-destination").append(div1);
     });
     slideCard();
