@@ -78,6 +78,11 @@ function deleteItem(index,data){
  
 }
 
+let trips = document.querySelector("#searchTrips");
+trips.addEventListener("click",function(){
+    window.location.href = "product.html"
+})
+
 
 var modal = document.querySelector("#payment");
 let checkoutBtn = document.querySelector("#checkout-btn");
