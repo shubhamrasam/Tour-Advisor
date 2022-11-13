@@ -18,24 +18,32 @@ let accountsData = JSON.parse(localStorage.getItem("account-details")) || [];
 let form = document.querySelector("#form");
 
 form.addEventListener("submit",storeData);
-
+let flag = false;
 function storeData(event){
   event.preventDefault();
-  let data ={
+  let dataObj ={
     name:form.name.value,
     email:form.email.value,
     password:form.password.value
   }
+  accountsData.forEach((e)=>{
+    if(e.email == form.email.value){
+        flag = true;
+    }
+  })
 
-  accountsData.push(data);
-
-  localStorage.setItem("account-details",JSON.stringify(accountsData));
-  form.name.value = ""
-  form.email.value = ""
-  form.password.value ="";
-
-  setTimeout(redirect,2000)
-   
+   if(flag == true){
+      alert("Email is Already Registered")
+      flag= false;
+   }else{
+      accountsData.push(dataObj);
+      localStorage.setItem("account-details",JSON.stringify(accountsData));
+      form.name.value = ""
+      form.email.value = ""
+      form.password.value ="";
+      setTimeout(redirect,2000)
+    }
+    
 }
 
 

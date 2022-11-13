@@ -39,8 +39,8 @@ function login(event){
           alert("Wrong Credentials");
     }
  }
-
-
+ 
+ 
 
 function showPassword(){
     let password = document.querySelector("#password");
@@ -51,3 +51,6 @@ function showPassword(){
       password.type = "password"
     }
   }
+
+ 
+
