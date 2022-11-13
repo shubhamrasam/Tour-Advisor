@@ -1,8 +1,4 @@
-// let name1 = document.querySelector("#nameID");
 
-// let nameID = JSON.parse(localStorage.getItem("name"));
-
-// name1.innerText = nameID
 function openside() {
     document.querySelector("#side-window").style.width = "250px";
   }
@@ -20,22 +16,27 @@ let basket = document.querySelector("#basket");
 basket.addEventListener("click",function(){
     window.location.href = "basket.html"
 })
+let trips = document.querySelector("#searchTrips");
+trips.addEventListener("click",function(){
+    window.location.href = "product.html"
+})
+
 
 
 let fullData = [];
 async function getData() {
-    let out = await fetch(
-      "https://636b2410c07d8f936daeca12.mockapi.io/TourAdvisor"
-    );
-    let data = await out.json();
-    fullData = [...data]
-    console.log(data)
-    displayData(data);
+    try{
+      let out = await fetch("https://636b2410c07d8f936daeca12.mockapi.io/TourAdvisor");
+      let data = await out.json();
+      fullData = [...data]
+      displayData(data);
+    }catch(err){
+      console.log(err)
+    }
   }
   getData();
   let cartData = JSON.parse(localStorage.getItem("cartItem")) || [];
   function displayData(data) {
-    // document.querySelector("#tour-destination").innerHTML=null
     data.forEach((element) => {
       let div1 = document.createElement("div");
       div1.setAttribute("class", "card");
@@ -134,10 +135,13 @@ async function getData() {
   }
 
 async function destination() {
-  let out = await fetch("https://636b92b2ad62451f9fb59e6e.mockapi.io/info");
-  let data = await out.json();
-//   console.log(data)
-  getDestination(data);
+    try{ 
+        let out = await fetch("https://636b92b2ad62451f9fb59e6e.mockapi.io/info");
+        let data = await out.json();
+        getDestination(data);
+    }catch(err){
+        console.log(err)
+    }
 }
 
 destination();
@@ -311,15 +315,3 @@ function slideCard3(){
     }
 }
 
-// <--------------search----------------------->
-
-
-
-// function searchElement(){
-//     let searchEle = document.querySelector("#search-input").value;
-//     console.log(searchEle)
-//     let searchData = fullData.filter((e)=>{
-//         return  e.Description.toLowerCase().includes(searchEle.toLowerCase())
-//     })
-//     displayData(searchData)
-// }

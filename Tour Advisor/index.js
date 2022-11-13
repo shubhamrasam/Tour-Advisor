@@ -4,12 +4,17 @@ loginpage.addEventListener("click", function () {
 });
 
 async function getData() {
-    let out = await fetch(
-      "https://636b2410c07d8f936daeca12.mockapi.io/TourAdvisor"
-    );
-    let data = await out.json();
-    // console.log(data)
-    displayData(data);
+    try{
+        let out = await fetch(
+          "https://636b2410c07d8f936daeca12.mockapi.io/TourAdvisor"
+        );
+        let data = await out.json();
+        displayData(data);
+
+    }catch(err){
+       console.log(err)
+    }
+   
   }
   getData();
   function displayData(data) {
@@ -85,10 +90,13 @@ async function getData() {
   }
   
   async function destination() {
-    let out = await fetch("https://636b92b2ad62451f9fb59e6e.mockapi.io/info");
-    let data = await out.json();
-    //   console.log(data)
-    getDestination(data);
+    try{
+         let out = await fetch("https://636b92b2ad62451f9fb59e6e.mockapi.io/info");
+         let data = await out.json();
+         getDestination(data);
+    }catch(err){
+         console.log(err)
+    }
   }
   
   destination();

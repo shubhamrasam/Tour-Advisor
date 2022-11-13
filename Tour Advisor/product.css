@@ -1,0 +1,107 @@
+
+#header .nav-bar{
+    margin-top:-122px;
+}
+
+#products{
+    width:100%;
+    margin:120px auto;
+}
+#search-trips{
+    width:60%;
+    margin:30px auto;
+    border: 1px solid black;
+    display: flex;
+    align-items:center;
+    border-radius: 20px;
+}
+#search-trips >#search-input{
+    width:80%;
+    font-size: 18px;
+}
+#search-trips > .material-icons{
+    padding:0px 6px;
+}
+#trips{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: auto;
+    gap:20px;
+    width:90%;
+    margin:10px auto;
+    padding-left:5px;
+}
+
+#trips div{
+    text-align: center;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#trips div >img{
+    width:100%;
+    margin-bottom: 10px;
+}
+
+#trips div >button{
+    margin-bottom: 10px;
+    margin-top: 10px;
+    border:2px solid black;
+    color:black;
+    background-color: white;
+    border-radius: 10px;
+    font-size: 16px;
+    padding:5px 10px;
+}
+#trips div >button:hover{
+    background-color: black;
+    color:white;
+}
+#trips div >p{
+    margin-top: 10px;
+}
+#trips div >h4{
+    margin-top: 10px;
+    padding:5px;
+}
+
+
+@media all and (min-width:768px) and (max-width:1023px){
+    #trips{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows: auto;
+        gap:20px;
+        width:90%;
+        margin:10px auto;
+    }
+}
+@media all and (min-width:768px) and (max-width:900px){
+    #products{
+        width:100%;
+        margin:130px auto;
+    }
+}
+@media all and (min-width:580px)and (max-width:767px){
+    #trips{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: auto;
+        gap:20px;
+        width:90%;
+        margin:10px auto;
+    }
+}
+@media all and (max-width:579px){
+    #trips{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        grid-template-rows: auto;
+        gap:20px;
+        width:90%;
+        margin:10px auto;
+    }
+}
