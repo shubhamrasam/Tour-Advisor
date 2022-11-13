@@ -39,7 +39,7 @@ body{
     cursor: pointer;
 }
 #nav-child >.nav-options{
-    width:45%;
+    width:43%;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -1387,7 +1387,7 @@ body{
 
     /* <---experiment---> */
     #side-window {
-        height: 700px;
+        height: 850px;
         width: 0; 
         display: block;
         position: fixed;
