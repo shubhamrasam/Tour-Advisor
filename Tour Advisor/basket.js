@@ -112,6 +112,8 @@ let flag = true;
 pay.addEventListener("submit",payment);
 function payment(event){
     event.preventDefault()
-    console.log("completed")
+    cartItem =[];
+    cartItem = localStorage.setItem("cartItem",JSON.stringify(cartItem))
    window.location.href = "otp.html"
+
 }
